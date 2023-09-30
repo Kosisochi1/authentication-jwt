@@ -3,6 +3,7 @@ const UserModel = require('./model/users');
 db.connect()
 	.then(async () => {
 		console.log('connected');
+		// This manually seed user into database
 		await UserModel.insertMany([
 			{
 				Name: 'KOSI',

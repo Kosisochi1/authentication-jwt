@@ -1,5 +1,5 @@
 const ItemsModel = require('../model/items');
-
+// Insert Items into the table
 const CreateItem = async (req, res) => {
 	const itemReq = req.body;
 	const item = await ItemsModel.create(itemReq);
@@ -8,6 +8,7 @@ const CreateItem = async (req, res) => {
 		item: item,
 	});
 };
+// Select all items from the table
 const GetAllItems = async (req, res) => {
 	const items = await ItemsModel.find();
 	return res.status(200).json({
@@ -15,6 +16,8 @@ const GetAllItems = async (req, res) => {
 		items,
 	});
 };
+// Select one Item from the table
+
 const GetOneItem = async (req, res) => {
 	const reqId = req.params.id;
 	const item = await ItemsModel.findById(reqId);
@@ -28,6 +31,7 @@ const GetOneItem = async (req, res) => {
 		item,
 	});
 };
+// Update the record in the table
 const UpdateItem = async (req, res) => {
 	const reqId = req.params.id;
 	const reqBody = req.body;
@@ -43,6 +47,7 @@ const UpdateItem = async (req, res) => {
 		data: updateItem,
 	});
 };
+// Drop the Item fron the table
 const deleteItem = async (req, res) => {
 	const reqId = req.params.id;
 	const itemExist = await ItemsModel.findOne({ _id: reqId });

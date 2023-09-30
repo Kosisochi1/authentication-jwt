@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.ObjectId;
-
+// User Schema
 const UserSchema = new Schema({
 	_id: {
 		type: String,

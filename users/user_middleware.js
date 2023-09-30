@@ -5,7 +5,7 @@ const validateUser = async (req, res, next) => {
 		const schema = joi.object({
 			Name: joi.string().required(),
 			Password: joi.string().required(),
-			email: joi.string().required(),
+			email: joi.string().required().unique(),
 			Role: joi.string().required(),
 			Address: joi.string().required(),
 			Phone_number: joi.string().required(),
