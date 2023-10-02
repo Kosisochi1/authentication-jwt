@@ -11,7 +11,7 @@ const Items = sequelize.define(
 			allowNull: false,
 			primaryKey: true,
 			type: DataTypes.UUID,
-			defaultValue: uuidv4(),
+			defaultValue: uuidv4,
 		},
 		Name: {
 			type: DataTypes.STRING,

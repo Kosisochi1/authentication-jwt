@@ -5,7 +5,7 @@ const globalMiddleWare = require('../globalMware/globalMiddleWare');
 const router = express.Router();
 
 router.post(
-	'/item',
+	'/createItem',
 	middleware.validateItem,
 	globalMiddleWare.authenticateToken,
 	controller.createItem

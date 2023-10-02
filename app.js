@@ -12,9 +12,9 @@ const PORT = process.env.DB_PORT;
 const app = express();
 
 app.use(bodyParser.json());
-app.use('/user', user_route);
-app.use('/login', user_route);
-app.use('/item', item_router);
+app.use('/users', user_route);
+// app.use('/login', user_route);
+app.use('/items', item_router);
 
 sequelize
 	.authenticate()

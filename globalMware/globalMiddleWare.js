@@ -10,6 +10,7 @@ const authenticateToken = (req, res, next) => {
 				massage: 'You are not authenticad',
 			});
 		}
+		//Get the token from the header and verify the token
 		const token = req.headers.authorization.split(' ')[1];
 		const verifyToken = jwt.verify(token, process.env.JWT_SECRETE);
 
